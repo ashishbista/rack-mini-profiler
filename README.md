@@ -7,7 +7,7 @@ Middleware that displays speed badge for every html page. Designed to work both 
 Install/add to Gemfile
 
 ```ruby
-gem 'rack-mini-profiler'
+gem 'rack-mini-profiler', :git => 'git@github.com:ashishbista/rack-mini-profiler.git'
 ```
 Using Rails:
 

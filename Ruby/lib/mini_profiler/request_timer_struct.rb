@@ -4,7 +4,7 @@ module Rack
   class MiniProfiler
 
     class RequestTimerStruct < TimerStruct
-      
+
       def self.createRoot(name, page)
         rt = RequestTimerStruct.new(name, page, nil)
         rt["IsRoot"]= true
@@ -15,7 +15,7 @@ module Rack
 
       def initialize(name, page, parent)
         if name.match(/^Net::HTTP/)
-          caller_line = caller.find { |e| /app\/(controllers|models|views)/ =~ e }
+          caller_line = caller.find { |e| /app\/(controllers|models|views|cells|classes|helpers)/ =~ e }
         else
           caller_line = ""
         end
@@ -83,7 +83,7 @@ module Rack
         self['SqlTimings'].push(timer)
         self['HasSqlTimings'] = true
         self['SqlTimingsDurationMilliseconds'] += elapsed_ms
-        page['DurationMillisecondsInSql'] += elapsed_ms        
+        page['DurationMillisecondsInSql'] += elapsed_ms
         timer
       end
 
@@ -109,13 +109,13 @@ module Rack
         self['DurationMilliseconds'] = milliseconds
         self['IsTrivial'] = true if milliseconds < self["TrivialDurationThresholdMilliseconds"]
         self['DurationWithoutChildrenMilliseconds'] = milliseconds - @children_duration
-        
+
         if @parent
           @parent.children_duration += milliseconds
         end
 
-      end     
+      end
     end
   end
-  
+
 end

@@ -1,5 +1,9 @@
 # rack-mini-profiler
 
+This fork of Mini Profiler (https://github.com/SamSaffron/MiniProfiler) contains only Ruby code. It has an extended supprot for profiling HTTP calls.
+
+I'll keep updating with original version.
+
 Middleware that displays speed badge for every html page. Designed to work both in production and in development.
 
 ## Using rack-mini-profiler in your app

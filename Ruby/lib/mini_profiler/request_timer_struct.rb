@@ -15,7 +15,7 @@ module Rack
 
       def initialize(name, page, parent)
         if name.match(/^Net::HTTP/)
-          caller_line = caller.find { |e| /app\/(controllers|models|views|cells|classes|helpers)/ =~ e }
+          caller_line = caller.find { |e| /app\/(controllers|models|cells|classes|helpers|views)/ =~ e }
         else
           caller_line = ""
         end

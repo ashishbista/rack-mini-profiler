@@ -101,8 +101,7 @@
   color: #aaaaaa;
   text-align: right;
 }
-.profiler-result .profiler-timings th,
-.profiler-result .profiler-timings td {
+.profiler-result .profiler-timings th
   white-space: nowrap;
 }
 .profiler-result .profiler-timings .profiler-duration-with-children {
@@ -452,4 +451,8 @@
   color: #0077cc;
   margin-left: 8px;
   font-size: 12px;
+}
+
+.profiler-output table td {
+  max-width: 100% !important;
 }
